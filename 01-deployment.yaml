@@ -19,6 +19,10 @@ spec:
       labels:
         app: argo-deployment
     spec:
+      initContainers:
+      - name: init-sleep
+        image: busybox
+        command: ["sleep", "10"]
       containers:
       - image: hashicorp/http-echo
         imagePullPolicy: Always
