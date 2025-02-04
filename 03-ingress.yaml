@@ -12,6 +12,6 @@ spec:
             pathType: Prefix
             backend:
               service:
-                name: argo-test-service
+                name: ingress-test-service
                 port:
                   number: 80
