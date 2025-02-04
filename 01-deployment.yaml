@@ -2,13 +2,13 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    app: argo-deployment
-  name: argo-deployment
+    app: ingress-test
+  name: ingress-test
 spec:
   replicas: 10
   selector:
     matchLabels:
-      app: argo-deployment
+      app: ingress-test
   strategy:
     rollingUpdate:
       maxSurge: 25%
@@ -17,7 +17,7 @@ spec:
   template:
     metadata:
       labels:
-        app: argo-deployment
+        app: ingress-test
     spec:
       initContainers:
       - name: init-sleep
