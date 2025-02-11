@@ -3,8 +3,6 @@ kind: Deployment
 metadata:
   labels:
     app: ingress-test
-  annotations:
-    restart.k8s.hpa.de/ttl: 5m
   name: ingress-test
 spec:
   replicas: 10
@@ -18,6 +16,8 @@ spec:
     type: RollingUpdate
   template:
     metadata:
+      annotations:
+        restart.k8s.hpa.de/ttl: 5m
       labels:
         app: ingress-test
     spec:
